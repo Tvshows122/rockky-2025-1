@@ -49,8 +49,7 @@ async def myplan(client, message):
         time_left_str = f"{days} ᴅᴀʏꜱ, {hours} ʜᴏᴜʀꜱ, {minutes} ᴍɪɴᴜᴛᴇꜱ"
         await message.reply_text(f"⚜️ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀ ᴅᴀᴛᴀ :\n\n👤 ᴜꜱᴇʀ : {user}\n⚡ ᴜꜱᴇʀ ɪᴅ : <code>{user_id}</code>\n⏰ ᴛɪᴍᴇ ʟᴇꜰᴛ : {time_left_str}\n⌛️ ᴇxᴘɪʀʏ ᴅᴀᴛᴇ : {expiry_str_in_ist}")   
     else:
-        await message.reply_text(f"<b>ʜᴇʏ {user},\n\n<blockquote>𝒀𝒐𝒖 𝑫𝒐 𝑵𝒐𝒕 𝑯𝒂𝒗𝒆 𝑨𝒏𝒚 𝑨𝒄𝒕𝒊𝒗𝒆 𝑷𝒓𝒆𝒎𝒊𝒖𝒎 𝒑𝒍𝒂𝒏𝒔, 𝑰𝒇 𝒀𝒐𝒖 𝑾𝒂𝒏𝒕 𝑻𝒐 𝑻𝒂𝒌𝒆 𝑷𝒓𝒆𝒎𝒊𝒖𝒎 𝑻𝒉𝒆𝒏 𝑪𝒍𝒊𝒄𝒌 𝑶𝒏 𝑩𝒆𝒍𝒐𝒘 𝑩𝒖𝒕𝒕𝒐𝒏 👇</blockquote><b>",
-	reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🌳 ᴄʜᴇᴄᴋᴏᴜᴛ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ 🌳", callback_data='seeplans')]]))			 
+        await message.reply_text(f"<b>ʜᴇʏ {user}<b>")			 
 
 @Client.on_message(filters.command("get_premium") & filters.user(ADMINS))
 async def get_premium(client, message):
@@ -143,20 +142,7 @@ async def premium_user(client, message):
 async def plan(client, message):
     user_id = message.from_user.id 
     users = message.from_user.mention 
-    btn = [[
-            InlineKeyboardButton('• Rᴇғᴇʀ •', callback_data='reffff')
-        ],[
-            InlineKeyboardButton('• ʙʀᴏɴᴢᴇ ', callback_data='broze'),
-            InlineKeyboardButton('• ꜱɪʟᴠᴇʀ ', callback_data='silver')
-        ],[
-            InlineKeyboardButton('• ɢᴏʟᴅ ', callback_data='gold'),
-            InlineKeyboardButton('• ᴘʟᴀᴛɪɴᴜᴍ ', callback_data='platinum')
-        ],[
-            InlineKeyboardButton('• ᴅɪᴀᴍᴏɴᴅ ', callback_data='diamond'),
-            InlineKeyboardButton('• ᴏᴛʜᴇʀ ', callback_data='other')
-        ],[
-            InlineKeyboardButton('• ꜰʀᴇᴇ ᴛʀɪᴀʟ ', callback_data='free')
-        ],[            
+    btn = [[            
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
     ]]
     await message.reply_photo(photo="https://envs.sh/Wdj.jpg", caption=script.PREMIUM_TEXT.format(message.from_user.mention), reply_markup=InlineKeyboardMarkup(btn))
